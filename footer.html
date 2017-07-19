@@ -1,0 +1,44 @@
+<div style="float:right">
+<hr>
+<h3>Features</h3>
+The proxy server makes the connection to the server on your behalf:
+<ul>
+<li>You don't have to change your hosts file</li>
+<li>URLs on your site are redirected to this proxy server</li>
+<li>If you browse away from the test site to a live site, then you are redirected to that site</li>
+<li>HTTP basic authentication works</li>
+<li>Cookies work, but might be a little weird (promiscuous)</li>
+</ul>
+<h3>Limitations</h3>
+A few things are not supported:
+<ul>
+<li>This proxy does not support partial loading: you have to <b>wait</b> for the proxy to get the whole page and ajust the links before it sends it back to you.</li>
+<li>You can expect it to be <b>slow</b>, because HTML pages are decomposed and rewritten, by PHP, an interpreted language..</li>
+<li>Javascript-heavy and flash sites tend to end up loading the "real" site, since host names and IP addresses in scripts are generally not rewritten. </li>
+<li>Meta refresh requests with an absolute URL are not rewritten.</li>
+<li>Non-HTTP protocols, and HTTP on ports other than port 80 are not supported
+(most of these are not name based virtual hosts anyhow, so you can browse to
+them directly).  Lately https on port 443 is vaguely supported, although
+without any trace of SSL certificate verification, which makes it just a little
+bit worse than useless, and it has not been tested with SNI.</li>
+</ul>
+If your new site and your old site are identical, you should use a browser
+plugin to show which URLs you are visiting (e.g. firebug for firefox).
+<h3>Bugs</h3>
+Yep, there's bugs, there are, and not just in the grammar of this sentence.  If you see one, don't panic - your site probably looks fine!
+<ul>
+<li>Error handling is pretty much non-existent - expect blank pages.</li>
+<li>The proxy can confuse character set encodings, and leave strange droppings like &Acirc; in your output (especially when running on CentOS 5.x).</li>
+<li>This proxy should <b>not</b> be used for security sensitive work, since different sites are rewritten into a single domain.  Also, there's no encryption.</li>
+<li>The HTTP referer header is not handled consistently.</li>
+<li>Links to foreign sites may be rejected by the server of the IP address you give: the software is too dumb to figure out whether you want the real
+fbcdn.com or the fbcdn.com at the IP address you supplied.</li>
+<li>This service is supplied as-is without any guarantee as to whether it
+works, etc.  Any assumptions you make about its manner of operation are
+entirely your own.</li>
+</ul>
+
+<!-- /cut/ -->
+</div>
+</body>
+</html>

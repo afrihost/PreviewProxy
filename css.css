@@ -1,0 +1,61 @@
+body {
+	color: #787878;
+	font: 13px "Calibri", "segoe", Helvetica-neue, sans-serif;
+	margin: 0;	
+}
+h1 {
+	color: #c80000; 
+	font-family: "LTVeto Medium";
+	font-weight:normal;
+	font-size: 26px;
+}
+h2,h3 {
+	color: #37434b; 
+	font-family: "LTVeto Medium";
+	font-weight:normal;
+	font-size: 18px;
+}
+form {
+	color: white; 
+	background-color: #37434b; 
+	padding: 1em; 
+	font: white; 
+	border: medium none; 
+	border-radius: 15px; 
+	-webkit-border-radius: 15px; 
+	-moz-border-radius: 15px; 
+}
+
+form label {
+	font-weight:bold;
+}
+
+#header {
+	background: url(http://www.afrihost.com/img/header.jpg) repeat-x center top;
+	padding: 10px 0;
+	margin-bottom: 30px;
+}
+
+.wrapmeup {
+	width: 960px;
+	padding: 0 30px;
+	margin: 0 auto;
+}
+
+.input {
+	color: #787878;
+	padding: 5px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border: none;	
+	margin-left: 10px;
+	outline: none;
+}
+hr {
+	border: 1;
+	width: 99%;
+	color: #fefefe;
+	background-color: #f8f8f8;
+	height: 2px;
+}

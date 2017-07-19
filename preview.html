@@ -1,0 +1,65 @@
+<style>
+.preview_block { background-color: #C80000; color: #FFFFFF;
+	padding: 2px 5px;
+	position: absolute;
+	text-align: left;
+	left: 5ex;
+	top: 5ex;
+	width: 320px;
+	opacity: 1.00;
+	z-index: 9990;
+	border-style:solid;
+	border-width:1px;
+	border-top-color:#EEEEEE;
+	border-right-color:#EEEEEE;
+	border-left-color:#444444;
+	border-bottom-color:#444444;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	line-height: 3ex;
+}
+p.preview_p {	margin: 1em; 
+        color:#FFFFFF;
+	font 10px Verdana, sans-serif, bold;
+	font-family: sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 3ex;
+}
+a.preview_link:link    {color:#FFFFFF; text-decoration: underline; }
+a.preview_link:visited {color:#FFFFFF;}
+a.preview_link:hover   {color:#A0A0A0;}
+a.preview_link:active  {color:#FFFFFF;} 
+</style>
+<div id="preview_banner" class="preview_block"
+	onclick="preview_banner_hide()"
+	onmouseover="setTimeout('preview_banner_hide()',7500)">
+<p class=preview_p>
+This <a class=preview_link href="/">Afrihost Preview</a> aims to give you an
+idea of what <a class=preview_link href="{$url}">{$domain}</a> will show when
+the DNS records are set to {$ip}.
+</p><p class=preview_p>
+If you see something that resembles your content, then you can go ahead and
+update DNS, and not be surprised by database connection errors.  You should see
+more or less the same content if you add a line to your browser's hosts file saying:
+</p><p class=preview_p style="font-family:fixed">{$ip}  {$hostname}
+</p><p class=preview_p>
+This box will go away when you click on it, or after a few seconds (if you have
+scripting enabled).
+</p><p class=preview_p>
+<font size=-2>({$changes} tweak{$plural} in {$microtime}s, E&amp;OE.)</font>
+</p>
+</div>
+<script language="Javascript">
+    function preview_banner_hide(){
+        preview_banner=document.getElementById('preview_banner');
+	preview_banner.style.display='none';
+	preview_banner.parentNode.removeChild(preview_banner);
+    }
+    if(parent!=top) {
+        setTimeout('preview_banner_hide()',200);
+    }
+    else {
+        setTimeout('preview_banner_hide()',15000);
+    }
+</script>
